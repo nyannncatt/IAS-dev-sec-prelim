@@ -1,0 +1,148 @@
+:root {
+  --clr-body: #0f172a;
+  --clr-navbar: #1e293b;
+  --clr-scrollbar: #1e293b;
+}
+
+* {
+  font-family: "Outfit", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+  width: 0.3em;
+}
+
+/* body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px var(--clr-scrollbar);
+} */
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background-color: var(--clr-scrollbar);
+}
+
+.navbar-custom {
+  background-color: var(--clr-navbar);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand img {
+  margin-right: 8px;
+}
+
+body {
+  background-color: var(--clr-body);
+}
+
+.url_heading {
+  color: aliceblue;
+}
+
+.ip_heading {
+  color: aliceblue;
+}
+
+.card {
+  margin-top: 1rem;
+  background-color: var(--clr-body);
+  color: aliceblue;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.card-body,
+.list-group-item {
+  background-color: var(--clr-body);
+  color: aliceblue;
+}
+
+.list-group-item p {
+  margin-bottom: 0rem;
+}
+
+.url_paragraph {
+  margin-bottom: 0rem;
+  font-size: 1.2rem;
+}
+
+.ip_paragraph {
+  margin-bottom: 0rem;
+  font-size: 1.2rem;
+}
+
+.card-header {
+  border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+#resultsUrl {
+  width: 90vw;
+  color: white;
+}
+
+#resultsIp {
+  width: 90vw;
+  color: white;
+}
+
+#resultsIoc {
+  width: 90vw;
+  color: white;
+}
+
+.showb {
+  width: 90vw;
+  color: white;
+}
+
+/* Custom table background color */
+.IOCTable {
+  background-color: var(--clr-body);
+  text-align: center;
+}
+
+/* Custom table header background color */
+.IOCTable thead th {
+  background-color: var(--clr-body);
+}
+
+/* Custom table row background color */
+.IOCTable tbody tr, .IOCTable tbody td {
+  background-color: var(--clr-body);
+  color: rgb(6, 168, 6);
+}
+
+/* Red color for rows with attack types other than 'normal' */
+.IOCTable .dos td,
+.table .r2l td,
+.IOCTable .u2r td,
+.IOCTable .probe td {
+  color: red;
+}
+
+
+#malurl {
+  margin-bottom: 1rem;
+}
+
+.IOCTable {
+  background-color: var(--clr-body);
+}
+
+.footer__title {
+  padding: 1rem;
+  background-color: var(--clr-navbar);
+  color: #ffffff;
+  margin-bottom: -1rem;
+}
+
+.nlr{
+  color: #ffffff;
+  text-align: center;
+  margin-top: 1rem;
+}

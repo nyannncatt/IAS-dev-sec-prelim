@@ -1,0 +1,10 @@
+{
+    "watch": [
+        "templates/*.html",
+        "public/*.css",
+        "src/*.js",
+        "scripts/*.js"
+    ],
+    "ext": "html css js",
+    "verbose": true
+}

@@ -1,0 +1,4 @@
+0,icmp,SF,1032,0,False,316,148
+1,tcp,RSTR,0,0,False,2,188
+60,tcp,S3,125,179,False,1,1
+150,tcp,SF,1587,6707,True,1,1

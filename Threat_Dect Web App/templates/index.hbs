@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeNet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/542cb8b844.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"
+        integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-custom navbar-expand-lg" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/favicon_io/favicon.ico" alt="Logo" width="30" height="30"
+                    class="d-inline-block align-text-top rounded-circle" />
+                SafeNet
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#malurl">Malicious URLs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#malip">Malicious IPs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#ioc">IOCs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="http://127.0.0.1:3005/" target="_blank">Network Analysis</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {{!-- Malicious URLs --}}
+    <div class="container mt-4" id="malurl">
+        <h2 class="url_heading mb-3">URL Verification Results</h2>
+        <div id="resultsUrl"></div>
+    </div>
+
+    {{!-- Malicious IPs --}}
+    <div class="container mt-4" id="malip">
+        <h2 class="ip_heading mb-3">IP Verification Results</h2>
+        <div id="resultsIp"></div>
+    </div>
+
+    {{!-- IOCs --}}
+    <div class="container mt-4 mb-4" id="ioc">
+        <h2 class="url_heading mb-3">Suspicious Inbound Connections Details</h2>
+        <div id="resultsIoc"></div>
+    </div>
+
+
+    <div class="container mt-3">
+        <button id="showBlocked" class="btn btn-success">Show Blocked Connections</button>
+        <div id="blockedConnections" class="showb card mt-3 mb-3">
+            <div class="card-header">Blocked Connections</div>
+            <div class="card-body">
+                <h5 class="card-title">Blocked URLs</h5>
+                <ul id="blockedUrls" class="list-group">
+                    <!-- URLs will be appended here -->
+                </ul>
+                <h5 class="card-title mt-3">Blocked IPs</h5>
+                <ul id="blockedIPs" class="list-group">
+                    <!-- IPs will be appended here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-4 gbutton">
+        <button id="generatePdfBtn" class="btn btn-primary">Generate Report PDF</button>
+    </div>
+
+
+
+
+    {{!-- <div class="container">
+        <div class="card bg-dark text-white">
+            <h5 class="card-header">Suspicious URL Checker</h5>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2">Input URL</h6>
+                <form id="urlForm">
+                    <div class="mb-3">
+                        <input class="form-control form-control" id="url" type="text" placeholder="Input URL"
+                            aria-label=".form-control-lg example">
+                    </div>
+                    <button type="submit" class="btn btn-outline-success">Submit</button>
+                </form>
+                <h6 class="card-subtitle mt-4 mb-2">Results</h6>
+                <div id="urlResult">
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
+    <footer class="footer text-center">
+        <h6 class="footer__title"> &copy; Developed by Team Digital Sentinels </h6>
+    </footer>
+
+    <!-- Scripts -->
+
+    <script src="script.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

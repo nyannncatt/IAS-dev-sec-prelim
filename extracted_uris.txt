@@ -1,0 +1,7 @@
+http://tile-service.weather.microsoft.com/en-US/livetile/preinstall?region=CN&appid=C98EA5B0842DBB9405BBF071E1DA76512D21FE36&FORM=Threshold
+http://tile-service.weather.microsoft.com/en-US/livetile/preinstall?region=CN&appid=C98EA5B0842DBB9405BBF071E1DA76512D21FE36&FORM=Threshold
+http://ctldl.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab?a7a3904caeb1dd2d
+http://ctldl.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab?a7a3904caeb1dd2d
+http://ctldl.windowsupdate.com/msdownload/update/v3/static/trustedr/en/disallowedcertstl.cab?2ed3c4219695930d
+http://ctldl.windowsupdate.com/msdownload/update/v3/static/trustedr/en/disallowedcertstl.cab?2ed3c4219695930d
+http://tile-service.weather.microsoft.com/en-US/livetile/preinstall?region=CN&appid=C98EA5B0842DBB9405BBF071E1DA76512D21FE36&FORM=Threshold
